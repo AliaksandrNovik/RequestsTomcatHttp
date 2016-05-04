@@ -10,34 +10,32 @@ import java.sql.Statement;
 public class CreateDatabase {
 	// JDBC driver name and database URL
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-	static final String DB_URL = "jdbc:mysql://localhost:3306/test";
-
+	static final String DB_URL = "jdbc:mysql://146.185.164.93:3306/tomcat7";
 
 	//  Database credentials
 	static final String USER = "root";
-	static final String PASS = "";
-	Connection conn = null;
+	static final String PASS = "7Ea4fae339";
 	Statement stmt = null;
+	Connection conn = null;
 	
 	public CreateDatabase() throws SQLException  {
 	
-		//STEP 2: Register JDBC driver
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			//STEP 3: Open a connection
-			System.out.println("Connecting to database...");
-			conn = DriverManager.getConnection(DB_URL, USER, PASS);
+		    Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		     e.printStackTrace();
 		}
-
-	
+		try {
+		    conn= DriverManager.getConnection(DB_URL, USER, PASS);
+		}
+		catch (SQLException e) {
+		    e.printStackTrace();
+		}
 	}
 	
 	public void putIntoDataBase(Message message) throws IOException{
 		  try {
-	            String sql = "INSERT INTO person (date, time, messageType, messageText) values (?,?, ?, ?)";
+	            String sql = "INSERT INTO message (date, time, messageType, messageText) values (?,?, ?, ?)";
 	            PreparedStatement statement = conn.prepareStatement(sql);
 	            statement.setDate(1, message.getDate());
 	            statement.setTime(2, message.getTime());
