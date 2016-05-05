@@ -30,7 +30,7 @@ body
 $(document).ready(function() {
  $("#tablediv").hide();
      $("#showTable").click(function(event){
-           $.get('https://tomcat7-aliaksandrnovik.rhcloud.com/Requests',function(responseJson) {
+           $.get('Requests',function(responseJson) {
             if(responseJson!=null){
                 $("#message").find("tr:gt(0)").remove();
                 var table1 = $("#message");
