@@ -25,7 +25,7 @@ body
  width: 40em;
 }
 </style>
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.6.2.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
  $("#tablediv").hide();
