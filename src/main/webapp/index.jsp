@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Tomcat 7 Server</title>
+<title>Tomcat 72 Server</title>
 <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 <style type="text/css">
 table, td, th
@@ -30,7 +30,7 @@ body
 $(document).ready(function() {
  $("#tablediv").hide();
      $("#showTable").click(function(event){
-           $.get('Requests',function(responseJson) {
+           $.get('https://tomcat7-aliaksandrnovik.rhcloud.com/Requests',function(responseJson) {
             if(responseJson!=null){
                 $("#message").find("tr:gt(0)").remove();
                 var table1 = $("#message");
