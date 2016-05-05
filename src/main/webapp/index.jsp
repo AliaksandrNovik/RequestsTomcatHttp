@@ -58,8 +58,8 @@ $(document).ready(function() {
     <tr> 
         <th scope="col">Date</th> 
         <th scope="col">Time</th> 
-        <th scope="col">Message Type</th> 
-        <th scope="col">Message Text</th> 
+        <th scope="col">MessageType</th> 
+        <th scope="col">MessageText</th> 
         <th scope="col">Id</th> 
     </tr> 
 </table>
