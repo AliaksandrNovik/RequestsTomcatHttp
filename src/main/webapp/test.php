@@ -1,6 +1,6 @@
 
  <?php
- define('HOST','sdfsdf');
+ define('HOST','146.185.164.93');
  define('USER','root');
  define('PASS','7Ea4fae339');
  define('DB','tomcat7');

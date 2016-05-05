@@ -1,26 +1,29 @@
-	<?php
-$header = "Content-Type: application/json";
-header($header);
- 
-$dbLink = mysqli_connect('146.185.164.93','root','7Ea4fae339','tomcat7');
- 
-if (!$dbLink) {
-    $row = array("siteStatus" => "Database Error");
-    print json_encode($row);
-} else {
-    $query = "SELECT * FROM message ";
- 
-    if ($result = mysqli_query($dbLink,$query)) {
-        $row = $result->fetch_array(MYSQLI_ASSOC);
-        if (is_null($row)) {
-            $row = array("siteStatus" => "Error - Site Not Found");
-        }
-    } else {
-        $row = array("siteStatus" => "General Error");
-    }
- 
-    print json_encode($row);
-    mysqli_close($dbLink);
-} // End else condition (for database connection)
- 
-?>
+<?php 
+
+	if($_SERVER['REQUEST_METHOD']=='GET'){
+		
+		$id  = $_GET['id'];
+		
+		require_once('test.php');
+		
+		$sql = "SELECT * FROM message";
+		
+		$r = mysqli_query($con,$sql);
+		
+		$res = mysqli_fetch_array($r);
+		
+		$result = array();
+		
+		array_push($result,array(
+			"date"=>$res['date'],
+			"time"=>$res['time'],
+			"messageType"=>$res['messageType'],
+			"messsageText"=>$res['messageText']
+			)
+		);
+		
+		echo json_encode(array("result"=>$result));
+		
+		mysqli_close($con);
+		
+	}

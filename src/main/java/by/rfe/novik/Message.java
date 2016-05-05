@@ -10,8 +10,25 @@ public class Message {
 	
 	private String messageText;
 	
+	private Time time;
+	
+	private String date;
+	
 	private int id;
 	
+	
+	public void setTime(Time time) {
+		this.time = time;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public Date getDate() {
 		java.sql.Date sqlDate = new java.sql.Date(new java.util.Date().getTime());
 		return sqlDate;
