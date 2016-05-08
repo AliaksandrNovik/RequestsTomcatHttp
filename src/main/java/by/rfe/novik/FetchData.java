@@ -13,11 +13,19 @@ import java.util.List;
 public class FetchData {
 	// JDBC driver name and database URL
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-	static final String DB_URL = "jdbc:mysql://146.185.164.93:3306/tomcat7";
+	
+	static final String DB_URL = "jdbc:mysql://127.5.127.2:3306/tomcat7";
+	//static final String DB_URL = "jdbc:mysql://146.185.164.93:3306/tomcat7";
 
+	static final String USER = "admin6PK4xdu";
+	static final String PASS = "w6WTVFDyPxGU";
+	
 	//  Database credentials
-	static final String USER = "root";
-	static final String PASS = "7Ea4fae339";
+	//static final String USER = "root";
+	//static final String PASS = "7Ea4fae339";
+	
+	
+	
 	Statement stmt = null;
 	static  Connection connection = null;
 	
